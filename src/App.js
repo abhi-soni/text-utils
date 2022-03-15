@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';  // from router v.6, Routes is used instead of Switch
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';  // from router v.6, Routes is used instead of Switch
 import './App.css';
 import Alert from './Components/Alert';
 import NavBar from './Components/NavBar';
