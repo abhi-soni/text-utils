@@ -50,12 +50,14 @@ const TextForm = (props) => {
                 <div>
                     <textarea className="form-control" id="textBox" rows="8" autoFocus={true} placeholder="Start typing here...." value={text} onChange={handleOnChange}></textarea>
                 </div>
-                <div className="mt-2">
-                    <button className="btn btn-primary mx-1" onClick={handleUpperClick}>Convert to Uppercase</button>
-                    <button className="btn btn-primary mx-1" onClick={handleLowerClick}>Convert to Lowercase</button>
-                    <button className="btn btn-primary mx-1" onClick={handleCopy}>Copy Text</button>
-                    <button className="btn btn-primary mx-1" onClick={handleRemoveSpaces}>Remove Spaces</button>
-                    <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear Text</button>
+                <div className="mt-3">
+
+                    {/* We can use disabled={text.length===0} to disable button when there is no text */}
+                    <button className="btn btn-primary mx-1 my-1" onClick={handleUpperClick}>Convert to Uppercase</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handleLowerClick}>Convert to Lowercase</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handleRemoveSpaces}>Remove Spaces</button>
+                    <button className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text</button>
                 </div>
             </div>
             <div className="container my-4 py-3 bg-dark bg-opacity-25">
@@ -63,7 +65,7 @@ const TextForm = (props) => {
                 <p className="mb-0">{((text.trim().split(" ")).filter(function (element) {
                         return element !== "";
                     })).length} Words and {text.length} Characters</p>
-                <p className="mb-0">{0.008 * text.split(" ").length} Minutes read</p>
+                <p className="mb-0">{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
             </div>
         </>
     );

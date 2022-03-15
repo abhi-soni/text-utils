@@ -6,9 +6,13 @@ const Alert = (props) => {
         return lower.charAt(0).toUpperCase() + lower.slice(1);
     }
     return (
-        /* if props.alert is true, "&&" will execute next statement, else it'll skip */
-        props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-            <strong>{capitalize(props.alert.type)}</strong> : {props.alert.msg}
+        <div style={{ height: "40px" }}>
+            
+            {/* if props.alert is true, "&&" will execute next statement, else it'll skip  */}
+          {  props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+                <strong>{capitalize(props.alert.type)}</strong> : {props.alert.msg}
+            </div>}
+
         </div>
     );
 }
