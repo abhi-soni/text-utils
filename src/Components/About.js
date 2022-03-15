@@ -29,8 +29,8 @@ const About = (props) => {
             <div className="container mt-4 px-lg-0" style={style}>
                 <h3>{props.title}</h3>
                 <p>This <b>Text Utils</b> project is created by <code>Abhishek Soni</code></p>
+                <button type="button" className="btn btn-primary" onClick={toggleMode}>{toggleBtnText}</button>
             </div>
-            <button type="button" className="btn btn-primary" onClick={toggleMode}>{toggleBtnText}</button>
         </>
     );
 }
