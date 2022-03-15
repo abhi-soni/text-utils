@@ -1,4 +1,6 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
+
 const TextForm = (props) => {
     // value in useState() function will be assigned into "text" variable, and then we can update value of "text" using setText
     const [text, setText] = useState("");
@@ -7,34 +9,46 @@ const TextForm = (props) => {
         setText(event.target.value);  // this will set the entered value to "text" variable
     }
     const handleUpperClick = () => {
-        let convertedText = text.toUpperCase();
-        setText(convertedText);
         if (text === "") alert("Please Enter Text")
+        else {
+            let convertedText = text.toUpperCase();
+            setText(convertedText);
+            props.showAlert("Converted to Upper Case !!", "success");
+        }
     }
     const handleLowerClick = () => {
-        let convertedText = text.toLowerCase();
-        setText(convertedText);
         if (text === "") alert("Please Enter Text")
+        else {
+            let convertedText = text.toLowerCase();
+            setText(convertedText);
+            props.showAlert("Converted to Lower Case !!", "success");
+        }
     }
     const handleClearClick = () => {
         let clearText = '';
         setText(clearText);
+        props.showAlert("Cleared Text !!", "success")
     }
     const handleCopy = () => {
         navigator.clipboard.writeText(text);
         if (text === "") alert("Please Enter Text")
-        else alert('Text Copied !!');
+        else
+            props.showAlert("Text Coppied to Clipboard !!", "success");
     }
     const handleRemoveSpaces = () => {
-        let newText = text.replace(/\s+/g,' ').trim();
-        setText(newText);
+        if (text === "") alert("Please Enter Text")
+        else {
+            let newText = text.replace(/\s+/g, ' ').trim();
+            setText(newText);
+            props.showAlert("Extra Spaces are removed !!", "success")
+        }
     }
     return (
         <>
             <div className="container mt-4 px-lg-0">
                 <h3>{props.title}</h3>
                 <div>
-                    <textarea className="form-control" id="textBox" rows="8" placeholder="Start typing here...." value={text} onChange={handleOnChange}></textarea>
+                    <textarea className="form-control" id="textBox" rows="8" autoFocus={true} placeholder="Start typing here...." value={text} onChange={handleOnChange}></textarea>
                 </div>
                 <div className="mt-2">
                     <button className="btn btn-primary mx-1" onClick={handleUpperClick}>Convert to Uppercase</button>
@@ -53,3 +67,9 @@ const TextForm = (props) => {
     );
 }
 export default TextForm;
+
+// setting datatype of props
+TextForm.propTypes = {
+    title: PropTypes.string,
+    showAlert: PropTypes.func
+}
