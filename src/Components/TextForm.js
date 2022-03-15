@@ -60,7 +60,9 @@ const TextForm = (props) => {
             </div>
             <div className="container my-4 py-3 bg-dark bg-opacity-25">
                 <h4> Text Summary</h4>
-                <p className="mb-0">{text.split(" ").length} words and {text.length} characters</p>
+                <p className="mb-0">{((text.trim().split(" ")).filter(function (element) {
+                        return element != "";
+                    })).length} Words and {text.length} Characters</p>
                 <p className="mb-0">{0.008 * text.split(" ").length} Minutes read</p>
             </div>
         </>
