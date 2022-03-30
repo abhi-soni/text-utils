@@ -53,11 +53,11 @@ const TextForm = (props) => {
                 <div className="mt-3">
 
                     {/* We can use disabled={text.length===0} to disable button when there is no text */}
-                    <button className="btn btn-primary mx-1 my-1" style={{background:"#1171cb"}} onClick={handleUpperClick}>Convert to Uppercase</button>
-                    <button className="btn btn-primary mx-1 my-1" style={{background:"#1171cb"}} onClick={handleLowerClick}>Convert to Lowercase</button>
-                    <button className="btn btn-primary mx-1 my-1" style={{background:"#1171cb"}} onClick={handleCopy}>Copy Text</button>
-                    <button className="btn btn-primary mx-1 my-1" style={{background:"#1171cb"}} onClick={handleRemoveSpaces}>Remove Spaces</button>
-                    <button className="btn btn-primary mx-1 my-1" style={{background:"#1171cb"}} onClick={handleClearClick}>Clear Text</button>
+                    <button className="btn btn-primary mx-1 my-1" style={{background:"#0b5fae"}} onClick={handleUpperClick}>Convert to Uppercase</button>
+                    <button className="btn btn-primary mx-1 my-1" style={{background:"#0b5fae"}} onClick={handleLowerClick}>Convert to Lowercase</button>
+                    <button className="btn btn-primary mx-1 my-1" style={{background:"#0b5fae"}} onClick={handleCopy}>Copy Text</button>
+                    <button className="btn btn-primary mx-1 my-1" style={{background:"#0b5fae"}} onClick={handleRemoveSpaces}>Remove Spaces</button>
+                    <button className="btn btn-primary mx-1 my-1" style={{background:"#0b5fae"}} onClick={handleClearClick}>Clear Text</button>
                 </div>
             </div>
             <div className="container my-4 py-3 bg-dark bg-opacity-25">
